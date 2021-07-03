@@ -1,0 +1,40 @@
+sudo nano /etc/ntp.conf
+убрать все публичные НТП
+добавить
+
+server 192.168.0.31
+server 192.168.0.32
+
+В sudo nano /etc/rc.local - синхр. время и блок скан принтеров
+sudo service cups-browsed stop
+sudo ntpdate 192.168.0.31
+
+
+Фонты винды
+
+sudo apt-get install ttf-mscorefonts-installer
+sudo fc-cache -f -v
+
+Remmina
+
+sudo add-apt-repository ppa:remmina-ppa-team/remmina-next
+sudo apt update
+sudo apt install remmina*
+
+i
+DPI Density
+
+DPI на linux mint xfce
+nano ~/.Xresources со следующим текстом:
+Xft.dpi: 160
+
+
+Wine
+http://tipsonubuntu.com/2017/05/26/wine-2-9-released-install-ubuntu/
+
+
+ntp renew
+
+sudo service ntp stop
+sudo ntpd -gq
+sudo service ntp start
